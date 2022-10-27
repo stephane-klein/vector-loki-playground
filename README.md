@@ -14,8 +14,18 @@ On OSX, execute this command with [brew](https://brew.sh/index_fr.html) to insta
 
 ```sh
 brew cask install vagrant virtualbox
-vagrant plugin install vagrant-hostmanager --plugin-version 1.8.9
 ```
+
+On Fedora install VirtualBox with https://github.com/stephane-klein/vagrant-virtualbox-fedora
+
+```
+$ sudo dnf install -y vagrant
+```
+
+```
+$ vagrant plugin install vagrant-hostmanager --plugin-version 1.8.9
+```
+
 
 ## Start Vagrant host
 
@@ -23,9 +33,9 @@ vagrant plugin install vagrant-hostmanager --plugin-version 1.8.9
 vagrant up
 ```
 
-Go to http://myserver:3000
+Go to http://myserver:3000 (login: `admin`, password `admin`)
 
-Configure Loki datasource:
+In http://myserver:3000/datasources page, add Loki data source:
 
 - Url: `http://loki:3100`
 
@@ -43,3 +53,5 @@ services:
     ports:
       - "8000:8000"
 ```
+
+Go to http://myserver:3000/explore page, fill raw query with `{source_type="docker"} |= ` value and execute "Run query".
