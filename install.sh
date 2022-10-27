@@ -97,7 +97,7 @@ cat <<EOF > /srv/loki/docker-compose.yml
 version: '3.8'
 services:
   loki:
-    image: grafana/loki:2.1.0
+    image: grafana/loki:2.6.1
     user: root
     ports:
       - "3100:3100"
@@ -107,12 +107,12 @@ services:
       - /var/lib/loki/:/var/lib/loki/
 
   grafana:
-    image: grafana/grafana:7.3.6
+    image: grafana/grafana:9.2.2
     ports:
       - "3000:3000"
 
   vector:
-    image: timberio/vector:0.11.X-debian
+    image: timberio/vector:0.24.2-debian
     ports:
       - "8383:8383"
     volumes:
