@@ -109,12 +109,12 @@ services:
       - /var/lib/loki/:/var/lib/loki/
 
   grafana:
-    image: grafana/grafana:9.2.2
+    image: grafana/grafana:9.2.3
     ports:
       - "3000:3000"
 
   vector:
-    image: timberio/vector:0.24.2-debian
+    image: timberio/vector:0.25.1-debian
     ports:
       - "8383:8383"
     volumes:
