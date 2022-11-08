@@ -54,4 +54,4 @@ services:
       - "8000:8000"
 ```
 
-Go to http://myserver:3000/explore page, fill raw query with `{source_type="docker"} |= ` value and execute "Run query".
+Go to http://myserver:3000/explore page, select `Loki` source, fill raw query with `{source_type="docker"} |= ` value and execute "Run query".
