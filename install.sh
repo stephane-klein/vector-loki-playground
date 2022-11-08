@@ -19,7 +19,8 @@ sudo service docker restart
 # Make sure we can actually use docker as the vagrant user
 sudo usermod -aG docker vagrant
 sudo docker --version
-sudo pip3 install docker-compose
+sudo pip3 install -U pip
+sudo pip3 install -U docker-compose
 
 sudo mkdir -p /srv/loki/
 
